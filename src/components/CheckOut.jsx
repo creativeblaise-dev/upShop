@@ -21,8 +21,8 @@ const CheckOut = () => {
     }
 
     return (
-        <main className="flex gap-4 p-6">
-        <div className="flex-4 bg-white shadow-lg rounded-lg p-4">
+        <main className=" grid md:grid-cols-2 gap-3 mt-4  p-6">
+        <div className="bg-white shadow-lg rounded-lg p-4 sm:col-start-1 sm:col-end-4 md:col-start-1 md:col-end-3 lg:col-start-1 lg:col-end-3 ">
             <div className="flex">
                 <div className="flex-3">
                     <h1 className="text-stone-900 font-bold text-xl mb-2">CheckOut</h1>
@@ -59,7 +59,7 @@ const CheckOut = () => {
              </section>
              
         </div>
-        <div className="flex-1 bg-white shadow-lg rounded-lg p-4 max-h-max ">
+        <div className="bg-white shadow-lg rounded-lg p-4 sm:col-start-3  max-h-max md:col-start-3 md:col-end-3  lg:col-start-3 ">
             <h1 className="text-stone-900 font-bold text-xl mb-3">Order summary</h1>
             <h2 className=" text-stone-900 font-bold mb-4">
                 Total 
