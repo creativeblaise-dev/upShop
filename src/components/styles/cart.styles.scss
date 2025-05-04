@@ -1,0 +1,19 @@
+.cart-modal {
+    border: none;
+    border-radius: 8px;
+    padding: 2rem;
+    z-index: 99;
+
+    &[open] {
+        animation: slide-in-from-top 0.35s ease-out;
+    };
+
+    &::backdrop {
+        background: rgba(0, 0, 0, 0.9);
+    }
+
+    form {
+        text-align: right;
+    }
+  }
+ 
