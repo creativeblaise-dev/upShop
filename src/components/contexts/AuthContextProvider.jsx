@@ -1,5 +1,5 @@
 
-import { useContext, useEffect, useReducer } from "react";
+import { useReducer, useEffect, useContext } from "react";
 import { AuthContext } from "./auth-context";
 import { onAuthStateChangedListener, createUserDocFromSignIn} from '../../utils/firebase/firebase.utils'
 
@@ -40,7 +40,7 @@ function authReducer(state, action){
   }
 
   if(action.type === 'USER_SIGN_OUT'){
-    return null
+    return {}
   }
   
   return state
@@ -54,17 +54,19 @@ export default function AuthContextProvider({children}){
   //   photoURL: '',
   //   createdAt: ''
   // }
-    const {currentUser} = useContext(AuthContext);
-
+    const {currentUser} = useContext(AuthContext)
     const [authCurrentUser, setAuthDispatch] = useReducer(authReducer, currentUser);
+
+
 
     useEffect(() => {
       const unsubscribe = onAuthStateChangedListener((user) => {
 
         if(user){
           createUserDocFromSignIn(user);
+          console.log(user)
         }
-        signInUser(user)
+        signInUser(user);
       });
       
       return unsubscribe

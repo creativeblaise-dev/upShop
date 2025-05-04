@@ -112,15 +112,15 @@ function shopAppReducer(state, action){
         
     }
 
-    if(action.type === 'SET_USER'){
-        const {email} = action.payload
-        return {
-            ...state,
-            currentUser: email
-        }
+    // if(action.type === 'SET_USER'){
+    //     const {email} = action.payload
+    //     return {
+    //         ...state,
+    //         currentUser: email
+    //     }
 
         
-    }
+    // }
     
     return state;
 }

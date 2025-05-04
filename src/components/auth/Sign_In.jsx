@@ -11,11 +11,13 @@ import SignUp from "./SignUp";
 import FormInput from "../FormInput";
 import { AuthContext } from "../contexts/auth-context";
 import { getDoc } from "firebase/firestore";
-import { StoreContext } from "../contexts/store-context";
+// import { StoreContext } from "../contexts/store-context";
 
 const Sign_In = () => {
-    const { userSigIn} = useContext(AuthContext);
-    const {upShopStateUpdater} = useContext(StoreContext);
+    const {currentUser, userSigIn} = useContext(AuthContext);
+    // const {upShopStateUpdater} = useContext(StoreContext);
+
+    console.log(currentUser)
  
 
     const [checkUserAuth, setUserAuth] = useState({
@@ -67,10 +69,10 @@ const Sign_In = () => {
         const userDoc = docSnap.data();
         userSigIn(userDoc)
       
-        upShopStateUpdater({
-          type: 'SET_USER',
-          payload: user
-        });
+        // upShopStateUpdater({
+        //   type: 'SET_USER',
+        //   payload: user
+        // });
         
       } else {
         // docSnap.data() will be undefined in this case

@@ -11,6 +11,9 @@ import { signUserOut } from "../utils/firebase/firebase.utils";
 export default function Profile() {
   const { currentUser, setAuthUser } = useContext(AuthContext);
 
+ console.log( currentUser)
+ console.log( Object.entries(currentUser).length)
+
   const {cart} = useContext(StoreContext);
 
   const dialog = useRef();
@@ -36,11 +39,12 @@ export default function Profile() {
     userProfileImage = currentUser.photoURL
   }
 
+
   return (
     <>
       <CartModal ref={dialog} />
       <div className="flex-2 flex gap-2 justify-end">
-        {currentUser === null ? (
+        {currentUser && Object.entries(currentUser).length === 0 ? (
           <Link className="text-sm text-stone-900" to="/sign-in">
             Sign In
           </Link>
