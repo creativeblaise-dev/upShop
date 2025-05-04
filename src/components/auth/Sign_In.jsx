@@ -14,11 +14,8 @@ import { getDoc } from "firebase/firestore";
 // import { StoreContext } from "../contexts/store-context";
 
 const Sign_In = () => {
-    const {currentUser, userSigIn} = useContext(AuthContext);
+    const { userSigIn} = useContext(AuthContext);
     // const {upShopStateUpdater} = useContext(StoreContext);
-
-    console.log(currentUser)
- 
 
     const [checkUserAuth, setUserAuth] = useState({
         user_email: '',

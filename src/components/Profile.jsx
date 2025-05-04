@@ -11,8 +11,7 @@ import { signUserOut } from "../utils/firebase/firebase.utils";
 export default function Profile() {
   const { currentUser, setAuthUser } = useContext(AuthContext);
 
- console.log( currentUser)
- console.log( Object.entries(currentUser).length)
+
 
   const {cart} = useContext(StoreContext);
 

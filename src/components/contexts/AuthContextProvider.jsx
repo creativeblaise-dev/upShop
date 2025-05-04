@@ -4,10 +4,6 @@ import { AuthContext } from "./auth-context";
 import { onAuthStateChangedListener, createUserDocFromSignIn} from '../../utils/firebase/firebase.utils'
 
 function authReducer(state, action){
-  if(action.type === 'SET_USER_PROFILE' ){
-    console.log(action.payload)
-  }
-
   if(action.type === 'AUTH_USER_SET'){
 
     const updatedUserState = {...state};
@@ -64,7 +60,6 @@ export default function AuthContextProvider({children}){
 
         if(user){
           createUserDocFromSignIn(user);
-          console.log(user)
         }
         signInUser(user);
       });

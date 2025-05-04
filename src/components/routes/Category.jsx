@@ -34,8 +34,6 @@ useEffect(() => {
 }, [categories, category]);
 
 
-console.log(products)
-
     return(
         <div>
          <CartModal ref={dialog} />

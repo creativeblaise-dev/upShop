@@ -20,7 +20,7 @@ const {categories, productInViewId, cart, addToCart} = useContext(StoreContext)
 const inCart = cart.filter(item => item.id === productInViewId);
   
 const selectedProduct = categories.find(product => product.id === productInViewId);
-console.log(selectedProduct)
+
 
   useImperativeHandle(
     ref,
