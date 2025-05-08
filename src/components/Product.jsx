@@ -57,11 +57,11 @@ const Product = () => {
                 </Button>
               </header>
                 {processedData &&
-                    <section className="flex gap-10 bg-white shadow rounded-lg p-4" key={processedData.id}> 
-                      <div className="flex-2"> 
+                    <section className="grid grid-col-2 gap-10 bg-white shadow rounded-lg p-4" key={processedData.id}> 
+                      <div className="md:col-start-1 md:col-end-3"> 
                           <img src={processedData.image} className="rounded-xl"/>
                       </div>
-                      <div className="flex-2">
+                      <div className="md:col-start-3">
                           <h1 className="font-bold text-4xl text-stone-800 mb-6">{processedData.name}</h1>
                           <p className="font-medium text-lg text-stone-700 mb-2">${processedData.price}</p>
                           <p className="text-sm text-slate-700">In { processedData.category}</p>
