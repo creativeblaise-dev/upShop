@@ -6,6 +6,7 @@ import { useNavigate } from "react-router";
 const CheckOut = () => {
 
     const {cart} = useContext(StoreContext);
+    
     const allItemPrices = cart.map(({calculatedSum}) => {
         return calculatedSum
     });

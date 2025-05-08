@@ -6,11 +6,11 @@ import CartModal from "./CartModal";
 // import ProductDisplayModal from "./ProductDisplayModal";
 import Card from "./Card";
 
-export default function CategoriesPreview({ title, products }) {
+export default function CategoryPreview({ title, products }) {
   const { cart, addToCart, upShopStateUpdater } = useContext(StoreContext);
 
   const dialog = useRef();
-  const productDialog = useRef();
+  // const productDialog = useRef();
 
   function openCart() {
     dialog.current.open();
@@ -22,7 +22,7 @@ export default function CategoriesPreview({ title, products }) {
       payload: id,
     });
 
-    productDialog.current.open();
+    // productDialog.current.open();
   }
 
   return (
@@ -32,12 +32,13 @@ export default function CategoriesPreview({ title, products }) {
 
       <div key={title} className="category-section p-6">
         <h1 className="text-lg font-bold text-stone-800 cursor-pointer'>">
-          <Link to={`shop/${title}`} >{title.toUpperCase()}</Link>	
+          <Link to={`/shop/${title}`} >{title.toUpperCase()}</Link>	
         </h1>
         <main className=" p-4 grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 mt-4">
           {products
             .filter((_, index) => index < 4)
             .map((product) => {
+
               const productExistsInCart = cart.find(
                 (item) => item.id === product.id
               );
@@ -63,6 +64,7 @@ export default function CategoriesPreview({ title, products }) {
                   product={product}
                   viewProduct={handleProductView}
                   key={product.id}
+                  category={title}
                 />
               );
             })}

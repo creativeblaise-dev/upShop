@@ -53,8 +53,6 @@ export default function AuthContextProvider({children}){
     const {currentUser} = useContext(AuthContext)
     const [authCurrentUser, setAuthDispatch] = useReducer(authReducer, currentUser);
 
-
-
     useEffect(() => {
       const unsubscribe = onAuthStateChangedListener((user) => {
 
@@ -81,8 +79,7 @@ export default function AuthContextProvider({children}){
       })
     }
 
- 
-   
+
       const authContextValue = {
         currentUser : authCurrentUser,
         setAuthUser: setAuthDispatch,

@@ -12,7 +12,6 @@ export default function Profile() {
   const { currentUser, setAuthUser } = useContext(AuthContext);
 
 
-
   const {cart} = useContext(StoreContext);
 
   const dialog = useRef();
@@ -60,7 +59,7 @@ export default function Profile() {
         />
         }
         <p className="text-stone-700 text-sm pr-4">
-          {currentUser !== null && currentUser.displayName}
+          {currentUser !== null && currentUser.displayName !== null ? currentUser.displayName : currentUser.email}
         </p>
         <div className="text-sm text-slate-600 flex gap-1 border-l-1 pl-3">
           <Button classes="cursor-pointer" onClick={handleOpenCart}>

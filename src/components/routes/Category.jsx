@@ -11,6 +11,7 @@ const {categories, upShopStateUpdater, cart, addToCart} = useContext(StoreContex
 const {category} = useParams();
 const [products, setProducts] = useState(categories[category]);
 
+
  const dialog = useRef();
   const productDialog = useRef();
 
@@ -26,13 +27,10 @@ const [products, setProducts] = useState(categories[category]);
 
     productDialog.current.open();
   }
-     
   
-
 useEffect(() => {
     setProducts(categories[category])
 }, [categories, category]);
-
 
     return(
         <div>

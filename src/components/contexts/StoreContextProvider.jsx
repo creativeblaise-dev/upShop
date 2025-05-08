@@ -94,6 +94,7 @@ function shopAppReducer(state, action){
 
 
     if(action.type === 'VIEW_PRODUCT'){
+        // console.log(action.payload)
         return {
             ...state,
             productInViewId: action.payload
@@ -127,15 +128,13 @@ function shopAppReducer(state, action){
 
 export default function StoreContextProvider({children}){
 
-    const [storeProducts , setstoreProducts] = useState({});
-
     const [upshopState, upShopDispatch] = useReducer(shopAppReducer, {
             productInViewId: undefined,
             categories: {},
-            products: shopList,
             cart: []
     });
 
+    const [storeProducts , setstoreProducts] = useState({});
     // useEffect(() => {
     //     addCollectionAndDocs('categories', shopList)
     // }, []);
@@ -246,7 +245,6 @@ export default function StoreContextProvider({children}){
       const storeContextValue = {
         productInViewId: upshopState.productInViewId,
         categories: storeProducts,
-        products: upshopState.products,
         cart: upshopState.cart,
         filterCategories: filteredShop,
         setFiltered: setFilteredShop,

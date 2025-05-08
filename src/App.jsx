@@ -31,7 +31,7 @@ function App() {
   return (
     <Routes>
       <Route
-        path="/"
+        path="/*"
         element={
           <>
           <Header>
