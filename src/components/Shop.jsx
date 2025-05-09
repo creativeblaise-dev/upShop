@@ -3,7 +3,6 @@ import {Routes, Route} from "react-router";
 import CategoriesPreview from "./routes/CategoriesPreview";
 import Category from "./routes/Category";
 import Product from "./Product";
-import { StoreContext } from "./contexts/store-context";
 
 export default function Shop() {
   

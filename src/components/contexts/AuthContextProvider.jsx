@@ -65,12 +65,12 @@ export default function AuthContextProvider({children}){
       return unsubscribe
     }, [])
    
-    function handleUserData(uid){
-      setAuthDispatch({
-      type: 'SET_USER_PROFILE',
-      payload: uid
-    });
-    }
+    // function handleUserData(uid){
+    //   setAuthDispatch({
+    //   type: 'SET_USER_PROFILE',
+    //   payload: uid
+    // });
+    // }
 
     function signInUser(user){
       setAuthDispatch({
@@ -83,7 +83,6 @@ export default function AuthContextProvider({children}){
       const authContextValue = {
         currentUser : authCurrentUser,
         setAuthUser: setAuthDispatch,
-        getUserData: handleUserData,
         userSigIn : signInUser,
       }
 

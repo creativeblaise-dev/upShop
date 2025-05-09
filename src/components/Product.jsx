@@ -16,10 +16,6 @@ const Product = () => {
         navigate(`/shop/${category}`);
     }
 
-    // useEffect(() => {
-    //     const categoryGroup = categories
-    //     setProducts(categoryGroup)
-    // }, [categories]);
 
     const processedData = useMemo(() => {
 

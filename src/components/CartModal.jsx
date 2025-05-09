@@ -114,8 +114,7 @@ export default function CartModal({ ref }) {
                         </Button>
                         <div className="py-1 px-3 bg-stone-400 ">
                           <p className="font-bold">
-                            {" "}
-                            {cart.length >= 1 ? product.quantity : 0}{" "}
+                            {cart.length >= 1 ? product.quantity : 0}
                           </p>
                         </div>
                         <Button
