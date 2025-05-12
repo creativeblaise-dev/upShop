@@ -4,7 +4,7 @@ export const StoreContext = createContext({
     productInViewId: undefined,
     categories: {},
     cart: [],
-    filterCategories: [],    
+    filterProducts: {},    
     setFiltered: () => {},
     addToCart : () => {},
     upShopStateUpdater : () => {} ,

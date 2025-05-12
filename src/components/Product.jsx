@@ -43,8 +43,6 @@ const Product = () => {
 
     const inCart = cart.filter((item) => item.id === processedData.id);
 
-    console.log(inCart)
-
     return(
          <main className="py-6 px-5">
               <header className="mb-6">

@@ -5,7 +5,6 @@ import Category from "./routes/Category";
 import Product from "./Product";
 
 export default function Shop() {
-  
   return (
     <Routes>
         <Route index element={<CategoriesPreview />} />

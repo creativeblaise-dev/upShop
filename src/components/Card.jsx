@@ -1,7 +1,6 @@
 import { Link } from "react-router"
 import { useContext } from "react"
 import { StoreContext } from "./contexts/store-context"
-import Button from "./Button"
 
 
 export default function Card({cartbtn, product}){

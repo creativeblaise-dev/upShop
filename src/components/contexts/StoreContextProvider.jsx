@@ -135,6 +135,7 @@ export default function StoreContextProvider({children}){
     });
 
     const [storeProducts , setstoreProducts] = useState({});
+    const [filterItems, setFilterItems] = useState({});
     // useEffect(() => {
     //     addCollectionAndDocs('categories', shopList)
     // }, []);
@@ -142,15 +143,15 @@ export default function StoreContextProvider({children}){
     useEffect( () => {
        const getCategories = async() => {
          const response = await getCategoriesAndDoc();
-         setstoreProducts(response)
-      
+         setstoreProducts(response);
+         setFilterItems(response);
        };
 
        getCategories();
     }, [])
 
 
-      const [filteredShop, setFilteredShop] = useState(shopList);
+    
     // const [shop, setShop] = useState({
     //     productInViewId: undefined,
     //     products: shopList,
@@ -246,8 +247,7 @@ export default function StoreContextProvider({children}){
         productInViewId: upshopState.productInViewId,
         categories: storeProducts,
         cart: upshopState.cart,
-        filterCategories: filteredShop,
-        setFiltered: setFilteredShop,
+        filterProducts: filterItems,
         addToCart : handleAddToCart,
         upShopStateUpdater: upShopDispatch,
       }
