@@ -79,6 +79,8 @@ function App() {
       if (searchRef.current && !searchRef.current.contains(e.target)) {
         callback();
       }
+
+      setSearchWord("");
     };
 
     useEffect(() => {
@@ -111,6 +113,7 @@ function App() {
   function closeSearch() {
     if (isToggle) {
       setIsToggle(!isToggle);
+      searchRef.current.value = ''
     }
   }
 
