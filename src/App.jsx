@@ -15,8 +15,10 @@ function App() {
   const { filterProducts } = useContext(StoreContext);
 
   const searchRef = useRef();
+  const [searchWord, setSearchWord] = useState('')
 
   const [products, setProducts] = useState([]);
+
 
   const filtering = useMemo(() => {
     const allProducts = [];
@@ -34,11 +36,11 @@ function App() {
 
   useEffect(() => {
     setProducts(filtering);
-  }, [filtering]);
+  }, [filtering, searchRef]);
 
   let searchContent;
 
-  if(searchRef && searchRef.current.value === ''){
+  if(searchWord === ''){
      searchContent = <div className=" gap-6 mb-2 p-2 mr-4 text-center ">
                          <h1 className="text-3xl text-stone-900 font-extrabold  ">It's empty here, start searching...</h1>
                          <img src={emptyCartIcon} className="w-full" />
@@ -90,11 +92,16 @@ function App() {
   const [isToggle, setIsToggle] = useState(false);
 
   function searching() {
+
+    const searchTerm = searchRef.current.value;
+    setSearchWord(searchTerm);
+
     const filterShopProduct = products.filter((product) =>
       product.name.toLowerCase().includes(searchRef.current.value.toLowerCase())
     );
 
-    if (searchRef.current.value === "") {
+  
+    if (searchWord === "") {
       setProducts(filtering);
     } else {
       setProducts(filterShopProduct);
@@ -106,6 +113,7 @@ function App() {
       setIsToggle(!isToggle);
     }
   }
+
 
   return (
     <Routes>

@@ -4,6 +4,7 @@ import Button from "./Button";
 
 export default function Search({ ref, searchFilter, onClickOutside, useClickOutside, searchToggler, isToggle, searchContent}) {
 
+
  const defaultClass = 'absolute bg-lime-50 w-100 h-90 p-4 border-1 border-stone-500 top-15 right-6 z-100 rounded-lg shadow-xl';
 
  const handleSearchOpen = () => {
@@ -12,8 +13,6 @@ export default function Search({ ref, searchFilter, onClickOutside, useClickOuts
 
  useClickOutside(ref,  onClickOutside);
 
-
- 
   return ( 
     <div className="flex-1">
       <input
