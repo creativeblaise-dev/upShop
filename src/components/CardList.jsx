@@ -42,14 +42,14 @@ export default function CardList() {
               );
 
               const cartButton = (
-                <Button
+                <Button 
                   onClick={() =>
                     productExistsInCart ? openCart() : addToCart(product)
                   }
                   classes={
                     productExistsInCart
-                      ? "text-md text-slate-200 text-xs cursor-pointer bg-gray-400 rounded-lg py-2 px-3"
-                      : "text-md text-slate-200 text-xs cursor-pointer bg-stone-800 rounded-lg py-2 px-3"
+                      ? "text-md text-slate-200 text-xs cursor-pointer bg-gray-400 rounded-lg py-2 px-3 dark:bg-white dark:text-slate-700"
+                      : "text-md text-slate-200 text-xs cursor-pointer bg-stone-800 rounded-lg py-2 px-3 dark:bg-white dark:text-stone-900"
                   }
                 >
                   {productExistsInCart ? "Go to Cart" : "Add to Cart"}

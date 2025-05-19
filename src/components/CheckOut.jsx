@@ -47,7 +47,7 @@ const CheckOut = () => {
                                 <p className="text-sm text-slate-700 mb-4">In {category}</p>
                                 <p className=" text-slate-800 font-bold text-lg ">Total Price: <span className="font-medium"> ${calculatedSum}</span></p>
                             </div>
-                            <div className="flex flex-1 justify-end">
+                            <div className="flex justify-end">
                                 <p className="text-sm text-slate-800 font-medium">Price: ${price}</p>
                             </div>
                         

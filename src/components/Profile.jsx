@@ -37,11 +37,26 @@ export default function Profile() {
     userProfileImage = currentUser.photoURL
   }
 
+  function toggleMode(){
+    const card = document.getElementsByClassName('card')
+    
+    for (const cardItem of card) {
+        cardItem.classList.toggle('dark')
+    }
+    
+  }
 
   return (
     <>
       <CartModal ref={dialog} />
       <div className="flex-2 flex gap-2 justify-end">
+       <span>
+        <Button id='toggleDark' classes='text-md text-slate-200 text-xs cursor-pointer bg-stone-800 rounded-lg py-2 px-3' 
+               onClick={toggleMode}
+          >
+           Toggle Mode
+        </Button>
+       </span>
         {currentUser && Object.entries(currentUser).length === 0 ? (
           <Link className="text-sm text-stone-900" to="/sign-in">
             Sign In

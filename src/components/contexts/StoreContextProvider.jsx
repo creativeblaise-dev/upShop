@@ -1,6 +1,5 @@
 import { useReducer, useState, useEffect} from "react";
 import {getCategoriesAndDoc} from "../../utils/firebase/firebase.utils"
-import shopList from "../../shopList";
 import { StoreContext } from "./store-context";
 
 function shopAppReducer(state, action){

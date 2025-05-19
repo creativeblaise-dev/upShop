@@ -28,13 +28,13 @@ const Product = () => {
 
         const pro = p.findIndex((item) => {
             return item
-        })
+        });
 
         const result = p.find((item , index) =>  {
             if(index === pro){
                 return item
             }
-        })
+        });
 
         return result
 
